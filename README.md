@@ -19,7 +19,6 @@ Now we have our portfolio of stocks, we carry out Monte Carlo simulations to ana
 
 <Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/ec9b6992-1f0d-4b5b-8a90-29e1ee998df0" />
 
-
 Using the ending values of the simulated portfolios, a histogram plot can be used to compute useful perfomance metrics.
 
 <Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/a26f4005-fe43-4201-81fd-aeb5c896d222" />
@@ -55,3 +54,9 @@ MAA: 11.47%
 DVA: 0.00%
 
 FDX: 0.00%
+
+Then we can run Monte Carlo simulations using this weighting, keeping the number of simulations and time period constant:
+
+<Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/6dfd5578-23ea-4519-aab2-fca06677fb67" />
+
+<Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/c12c0c36-7cdb-4f6c-b94a-eb2e86eaa888" />
