@@ -13,6 +13,17 @@ Selected Securities from Clusters:
 ['BLDR', 'URI', 'DHI', 'TDY', 'CSX', 'MAA', 'DVA', 'FDX']
 
 ## Monte Carlo Simulatons
-Now we have our portfolio of stocks, we carry out Monte Carlo simulations to analyse the performance of the porfolio based on specified weightings. The price paths of our portfolio are modelled under a multivariate normal distribution.
+Now we have our portfolio of stocks, we carry out Monte Carlo simulations to analyse the performance of the porfolio based on specified weightings. First we will apply a uniform weighting of the stocks in our portfolio where price paths of our portfolio are modelled under a multivariate normal distribution. The following shows the price paths of 1000 simulated portfolios over a period of 100 days:
 
 <Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/ec9b6992-1f0d-4b5b-8a90-29e1ee998df0" />
+
+Using the ending values of the simulated portfolios, a histogram plot can be used to compute useful perfomance metrics.
+
+<Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/a26f4005-fe43-4201-81fd-aeb5c896d222" />
+
+Monte Carlo Portfolio Performance
+Mean Return: 8.85%
+Std Dev of Return: 16.25%
+Value at Risk (95%): 14.55%
+Conditional VaR (95%): 20.70%
+Mean Max Drawdown: -13.09%
