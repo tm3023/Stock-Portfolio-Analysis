@@ -19,6 +19,7 @@ Now we have our portfolio of stocks, we carry out Monte Carlo simulations to ana
 
 <Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/ec9b6992-1f0d-4b5b-8a90-29e1ee998df0" />
 
+
 Using the ending values of the simulated portfolios, a histogram plot can be used to compute useful perfomance metrics.
 
 <Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/a26f4005-fe43-4201-81fd-aeb5c896d222" />
@@ -34,3 +35,23 @@ Value at Risk (95%): 14.55%
 Conditional VaR (95%): 20.70%
 
 Mean Max Drawdown: -13.09%
+
+Importantly, we would like to optimise the perfomance of the portfolio in a specified way. Here we will achieve this by optimising the weighting of the stocks in portfolio to maximise the Sharpe ratio. By defining the negative Sharpe ratio of a porfolio along with relevant bounds and constraints, ```scipy.optimize.minimize()``` returns our desired weighting:
+
+Optimized Weights (Max Sharpe):
+
+BLDR: 37.42%
+
+URI: 13.55%
+
+DHI: 12.67%
+
+TDY: 24.89%
+
+CSX: 0.00%
+
+MAA: 11.47%
+
+DVA: 0.00%
+
+FDX: 0.00%
