@@ -9,7 +9,9 @@ Optimal number of clusters: 4
 
 The elbow method is then used to determine the optimal value for k, past which values give diminishing returns of how well the stocks fit into the clusters. 
 The top perfoming stocks by Sharpe ratio are then picked out from each cluster. In this case we have the following:
+
 Selected Securities from Clusters:
+
 ['BLDR', 'URI', 'DHI', 'TDY', 'CSX', 'MAA', 'DVA', 'FDX']
 
 ## Monte Carlo Simulatons
@@ -22,8 +24,13 @@ Using the ending values of the simulated portfolios, a histogram plot can be use
 <Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/a26f4005-fe43-4201-81fd-aeb5c896d222" />
 
 Monte Carlo Portfolio Performance
+
 Mean Return: 8.85%
+
 Std Dev of Return: 16.25%
+
 Value at Risk (95%): 14.55%
+
 Conditional VaR (95%): 20.70%
+
 Mean Max Drawdown: -13.09%
