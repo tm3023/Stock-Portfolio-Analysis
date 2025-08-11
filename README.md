@@ -60,3 +60,59 @@ Then we can run Monte Carlo simulations using this weighting, keeping the number
 <Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/6dfd5578-23ea-4519-aab2-fca06677fb67" />
 
 <Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/c12c0c36-7cdb-4f6c-b94a-eb2e86eaa888" />
+
+Monte Carlo Portfolio Performance:
+
+Mean Return: 11.94%
+
+Std Dev of Return: 22.20%
+
+Value at Risk (95%): 19.93%
+
+Conditional VaR (95%): 25.48%
+
+Mean Max Drawdown: -16.82% 
+
+Here we see we have imporved the expected retun of the porfolio at cost of increased risk.
+
+## Efficient Frontier
+We also may also utilise the effiicent frontier to find weightings that meet other perfomance criteria such as minmising risk of obtaining expected returns above a specific threshold with minimal risk.
+
+<Figure size 1000x600 with 2 Axes><img width="813" height="547" alt="image" src="https://github.com/user-attachments/assets/bbf5fc63-dad3-4f5f-a314-e9100b6c5d71" />
+
+Optimized Weights (Min Volatility):
+
+BLDR: 1.32%
+
+URI: 0.55%
+
+DHI: 10.82%
+
+TDY: 21.32%
+
+CSX: 11.80%
+
+MAA: 31.22%
+
+DVA: 12.37%
+
+FDX: 10.61%
+
+Weights that return at least 10% with the least risk:
+
+BLDR: 21.78%
+
+URI: 5.44%
+
+DHI: 13.16%
+
+TDY: 28.27%
+
+CSX: 8.96%
+
+MAA: 17.61%
+
+DVA: 3.87%
+
+FDX: 0.92%
+
