@@ -116,3 +116,5 @@ DVA: 3.87%
 
 FDX: 0.92%
 
+## Discussion
+This project identifies the concepts and models which can be used to evaluate the performance of a stock portfolio along wih the respective weightings of its stocks, however these ideas can be extended to imporove the accuracy of our results by making extra considerations such as removing outliers in the clustering process or modifiying the dsitribution of stock returns to be log-normal.
