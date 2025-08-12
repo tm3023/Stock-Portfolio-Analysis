@@ -2,7 +2,7 @@
 Mathematical methods are used to build a stock portfolio from S&amp;P 500 stocks. Monte Carlo simulations are then used to evaluate the performance of the portfolio before and after weighting optimisation. An efficient frontier is used to find weightings that meet certain perfomance criteria.
 
 ## Stock Selection for Portfolio
-In the following we will build a porfolio of S&P 500 stocks and use yfinance to obtain historical data of the selceted stocks. We may build a portoflio manually with stocks an investor is already interested in, however we have automated this process by exctracting a random sample tickers from a table of S&P 500 stocks on wikipedia and then using k-means clustering to sort the stocks by specific attributes. We must decide on the number of clusters to assign the stocks to, so we we may use inertia as a measure of how well-fitting the clusters are. Lower inertia indicates a better fit.
+In the following we will build a portfolio of S&P 500 stocks and use yfinance to obtain historical data of the selceted stocks. We may build a portoflio manually with stocks an investor is already interested in, however we have automated this process by exctracting a random sample of tickers from a table of S&P 500 stocks on wikipedia and then using k-means clustering to sort the stocks by specific attributes. We must decide on the number of clusters to assign the stocks to, so we we may use inertia as a measure of how well-fitting the clusters are. Lower inertia indicates a better fit.
 <Figure size 800x500 with 1 Axes><img width="686" height="470" alt="image" src="https://github.com/user-attachments/assets/7653bc79-bec4-4eea-bb17-45a5c783f906" />
 
 Optimal number of clusters: 4
@@ -35,7 +35,7 @@ Conditional VaR (95%): 20.70%
 
 Mean Max Drawdown: -13.09%
 
-Importantly, we would like to optimise the perfomance of the portfolio in a specified way. Here we will achieve this by optimising the weighting of the stocks in portfolio to maximise the Sharpe ratio. By defining the negative Sharpe ratio of a porfolio along with relevant bounds and constraints, ```scipy.optimize.minimize()``` returns our desired weighting:
+Importantly, we would like to optimise the perfomance of the portfolio in a specified way. Here we will achieve this by optimising the weighting of the stocks in the portfolio to maximise the Sharpe ratio. By defining the negative Sharpe ratio of a portfolio along with relevant bounds and constraints (i.e. each weight is a value between 0 and 1 where the sum off all weights is 1), ```scipy.optimize.minimize()``` returns our desired weighting:
 
 Optimized Weights (Max Sharpe):
 
@@ -73,10 +73,10 @@ Conditional VaR (95%): 25.48%
 
 Mean Max Drawdown: -16.82% 
 
-Here we see we have imporved the expected retun of the porfolio at cost of increased risk.
+Here we see we have imporved the expected retun of the porfolio at the cost of increased risk. We could optimise our weighting under different criteria to potentially mitigate this.
 
 ## Efficient Frontier
-We also may also utilise the effiicent frontier to find weightings that meet other perfomance criteria such as minmising risk of obtaining expected returns above a specific threshold with minimal risk.
+We also may also utilise an effiicent frontier to find weightings that meet other perfomance criteria such as minmising risk or obtaining expected returns above a specific threshold with minimal risk. An efficent frontier plot is a good visualisation of risk-return profiles for the different portfolio weightings.
 
 <Figure size 1000x600 with 2 Axes><img width="813" height="547" alt="image" src="https://github.com/user-attachments/assets/bbf5fc63-dad3-4f5f-a314-e9100b6c5d71" />
 
@@ -117,4 +117,4 @@ DVA: 3.87%
 FDX: 0.92%
 
 ## Discussion
-This project identifies the concepts and models which can be used to evaluate the performance of a stock portfolio along wih the respective weightings of its stocks, however these ideas can be extended to imporove the accuracy of our results by making extra considerations such as removing outliers in the clustering process or modifiying the dsitribution of stock returns to be log-normal. In relation to modern portfolio theory we could also consider further diversifaction by including other asset types such as bonds and commodities. Implementing these would follow a similar process of determining a desired optimial weighitng based on expected risk-return profiles. Since the weighing optimisiation process is primarily based off of concepts relating to modern portfolio theory, there are limitations such as downside risk not being accounted for when selcting a weighting. To conter this we could incorporate a method for optimising the weightings based on max-drawdown as opposed to volatility.
+This project identifies the concepts and models which can be used to evaluate the performance of a stock portfolio along wih the respective weightings of its stocks, however these ideas can be extended to imporove the accuracy of our results by making extra considerations such as removing outliers in the clustering process or modifiying the dsitribution of stock returns to be log-normal. In relation to modern portfolio theory we could also consider further diversifaction by including other asset types such as bonds and commodities. Implementing these would follow a similar process of determining a desired optimial weighting based on expected risk-return profiles. Since the weighing optimisiation process is primarily based off of concepts relating to modern portfolio theory, there are limitations such as downside risk not being accounted for when selcting a weighting. To conter this we could incorporate a method for optimising the weightings based on max-drawdown as opposed to just volatility.
