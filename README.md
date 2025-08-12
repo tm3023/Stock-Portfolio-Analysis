@@ -1,5 +1,5 @@
 # Stock Portfolio Analysis 
-Mathematical methods are used to build a stock portfolio from S&amp;P 500 stocks. Monte Carlo simulations are then used to evaluate the performance of the portfolio before and after weighting optimisation. An efficient frontier is used to find weightings that meet certain perfomance criteria.
+Mathematical methods are used to build a stock portfolio from S&amp;P 500 stocks. Monte Carlo simulations are then used to evaluate the performance of the portfolio before and after weighting optimisation. An efficient frontier is used to find weightings that meet certain performance criteria.
 
 ## Stock Selection for Portfolio
 In the following we will build a portfolio of S&P 500 stocks and use yfinance to obtain historical data of the selceted stocks. We may build a portoflio manually with stocks an investor is already interested in, however we have automated this process by exctracting a random sample of tickers from a table of S&P 500 stocks on wikipedia and then using k-means clustering to sort the stocks by specific attributes. We must decide on the number of clusters to assign the stocks to, so we we may use inertia as a measure of how well-fitting the clusters are. Lower inertia indicates a better fit.
