@@ -80,6 +80,8 @@ We also may also utilise an effiicent frontier to find weightings that meet othe
 
 <Figure size 1000x600 with 2 Axes><img width="813" height="547" alt="image" src="https://github.com/user-attachments/assets/bbf5fc63-dad3-4f5f-a314-e9100b6c5d71" />
 
+Note: The plot refers to annualised expected returns, however in this case we have set the period to 100 days as opposed to a year (252 days).
+
 Optimized Weights (Min Volatility):
 
 BLDR: 1.32%
