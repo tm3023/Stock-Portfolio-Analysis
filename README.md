@@ -57,9 +57,9 @@ FDX: 0.00%
 
 Then we can run Monte Carlo simulations using this weighting, keeping the number of simulations and time period constant:
 
-<Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/6dfd5578-23ea-4519-aab2-fca06677fb67" />
+<Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/c529d944-dfd1-4026-90c8-c44158913d47" />
 
-<Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/c12c0c36-7cdb-4f6c-b94a-eb2e86eaa888" />
+<Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/66d70d60-886e-42eb-a748-f5f15b0926f9" />
 
 Monte Carlo Portfolio Performance:
 
@@ -78,9 +78,9 @@ Here we see we have imporved the expected retun of the porfolio at the cost of i
 ## Efficient Frontier
 We also may also utilise an effiicent frontier to find weightings that meet other perfomance criteria such as minmising risk or obtaining expected returns above a specific threshold with minimal risk. An efficent frontier plot is a good visualisation of risk-return profiles for the different portfolio weightings.
 
-<Figure size 1000x600 with 2 Axes><img width="813" height="547" alt="image" src="https://github.com/user-attachments/assets/bbf5fc63-dad3-4f5f-a314-e9100b6c5d71" />
+<Figure size 1000x600 with 2 Axes><img width="821" height="547" alt="image" src="https://github.com/user-attachments/assets/2d2f94cd-f794-46b1-9137-4749d839e1fd" />
 
-Note: The plot refers to annualised expected returns, however in this case we have set the period to 100 days as opposed to a year (252 days).
+Note: The plot is labelled to annualised expected returns, however in this case we have set the period to 100 days as opposed to a year (252 days).
 
 Optimized Weights (Min Volatility):
 
