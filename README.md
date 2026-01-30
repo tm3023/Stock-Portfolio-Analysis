@@ -15,7 +15,7 @@ Selected Securities from Clusters:
 ['CVS', 'ARES', 'LII', 'KIM', 'AXON', 'UAL', 'TTD']
 
 ## Monte Carlo Simulatons
-Now we have our portfolio of stocks, we carry out Monte Carlo simulations to analyse the performance of the porfolio based on specified weightings. First we will apply a uniform weighting of the stocks in our portfolio where price paths of our portfolio are modelled using the cumulative sum of returns under a multivariate normal distribution $\mathcal{N}(\mu, \Sigma)$, where $\mu$ is a column vector such that each entry contains the historical mean returns of a stock and $\Sigma$ is the correseponding covaraince matrix for the returns. The following shows the price paths of 1000 simulated portfolios over a period of 100 days:
+Now we have our portfolio of stocks, we carry out Monte Carlo simulations to analyse the performance of the porfolio based on specified weightings. First we will apply a uniform weighting of the stocks in our portfolio where price paths of our portfolio are modelled using the cumulative sum of returns under a multivariate normal distribution $\mathcal{MVN}(\mu, \Sigma)$, where $\mu$ is a column vector such that each entry contains the historical mean returns of a stock and $\Sigma$ is the correseponding covaraince matrix for the returns. The following shows the price paths of 1000 simulated portfolios over a period of 100 days:
 
 <Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/a25b6036-69f6-40e4-b2dd-2be7c301096b" />
 
