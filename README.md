@@ -2,7 +2,7 @@
 Mathematical methods are used to build a stock portfolio from S&amp;P 500 stocks. Monte Carlo simulations are then used to evaluate the performance of the portfolio before and after weighting optimisation. An efficient frontier is used to find weightings that meet desired performance criteria. These methods are beneficial for determining an optimal invetsement strategy and mitigating risk.
 
 ## Stock Selection for Portfolio
-In the following we will build a portfolio of S&P 500 stocks and use Python's ```yfinance``` module to obtain historical data of the selceted stocks. We may build a diverse portfolio manually with stocks an investor is already interested in, however we have automated this process by exctracting a random sample of tickers from a table of S&P 500 stocks exctracted from wikipedia and then using k-means clustering to sort the stocks by specific attributes. We must decide on the number of clusters to assign the stocks to, so we we may use inertia as a measure of how well-fitting the clusters are. Lower inertia indicates a better fit.
+In the following we will build a portfolio of S&P 500 stocks and use Python's ```yfinance``` module to obtain historical data of the selceted stocks. We may build a diverse portfolio manually with stocks an investor is already interested in, however we have automated this process by exctracting a random sample of tickers from a table of S&P 500 stocks exctracted from wikipedia and then using k-means clustering to sort the stocks by specific attributes. This allows for a more anlytical approach to diversification as oppoesed to diversifiying by industry. We must decide on the number of clusters to assign the stocks to, so we we may use inertia as a measure of how well-fitting the clusters are. Lower inertia indicates a better fit.
 <Figure size 800x500 with 1 Axes><img width="686" height="470" alt="image" src="https://github.com/user-attachments/assets/2c34f969-5cf2-4f20-9cb4-a56cc10dd6c7" />
 
 Optimal number of clusters: 4
@@ -62,7 +62,6 @@ Then we can run Monte Carlo simulations using this weighting, keeping the number
 Monte Carlo Portfolio Performance:
 
 Mean Return: 22.48%
-
 
 Std Dev of Return: 33.30%
 
