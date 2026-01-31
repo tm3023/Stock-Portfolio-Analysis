@@ -17,23 +17,23 @@ Selected Securities from Clusters:
 ## Monte Carlo Simulatons
 Now we have our portfolio of stocks, we carry out Monte Carlo simulations to analyse the performance of the porfolio based on specified weightings. First we will apply a uniform weighting of the stocks in our portfolio where price paths of our portfolio are modelled using the cumulative product of returns under a multivariate normal distribution $\mathcal{MVN}(\mu, \Sigma)$, where $\mu$ is a column vector such that each entry contains the historical mean returns of a stock and $\Sigma$ is the correseponding covaraince matrix for the returns. The following shows the price paths of 1000 simulated portfolios over a period of 100 days:
 
-<Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/a25b6036-69f6-40e4-b2dd-2be7c301096b" />
+<img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/fc71383f-1dab-4a79-bea6-493d036d4655" />
 
 Using the ending values of the simulated portfolios, a histogram plot can be used to compute useful perfomance metrics.
 
-<Figure size 1000x600 with 1 Axes><img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/f3c9b470-781a-4f10-bcf4-6318af118b33" />
+<img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/331f9250-e345-4352-9f90-422491a4d077" />
 
 Monte Carlo Portfolio Performance
 
-Mean Return: 4.56%
+Mean Return: 4.63%
 
-Std Dev of Return: 15.72%
+Std Dev of Return: 16.88%
 
-Value at Risk (95%): 19.03%
+Value at Risk (5%): 19.73%
 
-Conditional VaR (95%): 24.01%
+Conditional VaR (5%): 25.60%
 
-Mean Max Drawdown: -14.56%
+Mean Max Drawdown: -14.87%
 
 Importantly, we would like to optimise the perfomance of the portfolio in a specified way. Here we will achieve this by optimising the weighting of the stocks in the portfolio to maximise the Sharpe ratio. By defining the negative Sharpe ratio of a portfolio along with relevant bounds and constraints (i.e. each weight is a value between 0 and 1 where the sum off all weights is 1), ```scipy.optimize.minimize()``` returns our desired weighting:
 
@@ -55,60 +55,61 @@ TTD: 0.00%
 
 Then we can run Monte Carlo simulations using this weighting, keeping the number of simulations and time period constant:
 
-<Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/82e99caa-c3e2-4409-8de5-2ed317e7d778" />
+<img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/ab24559b-aea9-43c8-b29b-ad86d04875e1" />
 
-<Figure size 1000x600 with 1 Axes><img width="852" height="547" alt="image" src="https://github.com/user-attachments/assets/a531e7e0-0481-4104-ac39-f3e535a4ef36" />
+<img width="841" height="547" alt="image" src="https://github.com/user-attachments/assets/f63704a0-4605-4fd3-8dfb-6c2b694ace8c" />
 
 Monte Carlo Portfolio Performance:
 
-Mean Return: 22.44%
+Mean Return: 22.48%
 
-Std Dev of Return: 31.01%
 
-Value at Risk (95%): 19.82%
+Std Dev of Return: 33.30%
 
-Conditional VaR (95%): 27.55%
+Value at Risk (5%): 23.26%
 
-Mean Max Drawdown: -20.43%
+Conditional VaR (5%): 30.26%
+
+Mean Max Drawdown: -21.01%
 
 Here we see we have imporved the expected retun of the porfolio at the cost of increased risk. We could optimise our weighting under different criteria to potentially mitigate this.
 
 ## Efficient Frontier
 We also may also utilise an effiicent frontier to find weightings that meet other perfomance criteria such as minmising risk or obtaining expected returns above a specific threshold with minimal risk. An efficent frontier plot is a good visualisation of risk-return profiles for the different portfolio weightings.
 
-<Figure size 1000x600 with 2 Axes><img width="845" height="547" alt="image" src="https://github.com/user-attachments/assets/70eeb139-a5ba-4f37-ab5a-1962a50f2fc6" />
+<img width="845" height="547" alt="image" src="https://github.com/user-attachments/assets/f686ea9c-bcf8-4d08-88f1-3ddf79b00a21" />
 
-  Optimized Weights (Min Volatility):
+Optimized Weights (Min Volatility):
 
-CVS: 14.86%
+CVS: 7.85%
 
-ARES: 1.44%
+ARES: 2.60%
 
-LII: 13.53%
+LII: 10.89%
 
-KIM: 58.80%
+KIM: 61.90%
 
-AXON: 6.20%
+AXON: 4.76%
 
-UAL: 0.35%
+UAL: 2.74%
 
-TTD: 4.81%
+TTD: 9.25%
 
 Weights that return at least 10% with the least risk:
 
-CVS: 3.98%
+CVS: 3.14%
 
-ARES: 3.35%
+ARES: 2.94%
 
-LII: 14.31%
+LII: 5.51%
 
-KIM: 39.27%
+KIM: 52.92%
 
-AXON: 22.90%
+AXON: 23.21%
 
-UAL: 14.55%
+UAL: 12.00%
 
-TTD: 1.64%
+TTD: 0.27%
 
 ## Discussion
 This project identifies the models which can be used to evaluate the performance of a stock portfolio whilst optimising investment strategy and mitigating risk, however these ideas can be extended to imporove the reliability of our results by making extra considerations such as removing outliers in the clustering process alongside utilising correlation matrices or modifiying the distribution of the simulated stock returns to be log-normal: we can check check the fit of the historical returns to a normal distribution with QQ-plot to visulaize where our assumptions break down. In relation to modern portfolio theory we could also consider further diversifaction by including other asset types such as bonds and commodities. Implementing these would follow a similar process of determining a desired optimial weighting based on expected risk-return profiles. Since the optimisiation process is primarily based off of concepts relating to modern portfolio theory, there are limitations such as downside risk not being accounted for when selcting the weightings. To counter this we could incorporate a method for optimising the weightings based on max-drawdown as opposed to volatility.
