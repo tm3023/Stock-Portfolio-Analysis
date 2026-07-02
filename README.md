@@ -168,6 +168,9 @@ This project demonstrates models for evaluating portfolio performance whilst opt
 - **Correlated joint safety test**: portfolio stocks and the S&P 500 share the same random draws so that the probability of outperformance is a meaningful comparison rather than an artefact of independent noise.
 - **Regime analysis on realised returns**: bull and bear days are identified from the S&P 500 train-period returns and realised daily returns are compared directly, avoiding the compounding artefact that affects regime-conditional Monte Carlo simulations.
 - **Robust data handling**: tickers with insufficient price history are dropped before clustering, and Wikipedia dot-style share class tickers are converted to the hyphen format required by `yfinance`.
+- **Covariance regularisation**: a small multiple of the identity matrix (epsilon = 1e-8) is added to every covariance matrix before simulation, guaranteeing positive definiteness and enabling the faster Cholesky decomposition path throughout.
+- **Resilient cluster count selection**: if `KneeLocator` finds no clear elbow, the notebook falls back to the point of maximum second derivative in the inertia curve, giving a data-driven answer rather than an arbitrary default.
+- **Offline ticker fallback**: if the Wikipedia request fails or the page layout changes, the notebook falls back to a hardcoded sector-balanced list of 33 well-known S&P 500 constituents (3 per GICS sector) so the analysis can still run without internet access.
 
 Further extensions that would improve the reliability of the results include:
 
@@ -179,6 +182,6 @@ Further extensions that would improve the reliability of the results include:
 
 ## Limitations
 
-- The Monte Carlo simulation uses numpy's SVD-based multivariate normal sampler rather than a Cholesky factorisation, so that covariance matrices that are only positive semi-definite do not cause the simulation to fail.
-- `KneeLocator` can return `None` if no clear elbow is found; the notebook falls back to a default value of k in that case.
-- The S&P 500 ticker list is scraped live from Wikipedia on every run; if the page layout changes or the request is blocked, the first cell will fail.
+- Daily returns are modelled as multivariate normal. Equity returns exhibit fat tails and negative skewness not captured by the Gaussian assumption, so the true probability of extreme losses is likely higher than the VaR and CVaR figures suggest.
+- Performance metrics are estimated from a single one-year historical window. Results may differ substantially across different market regimes; rolling walk-forward validation would provide a more robust assessment of whether the regime-analysis findings are consistent over time.
+- The 7-stock portfolio is too concentrated to eliminate idiosyncratic risk, even with optimal weighting. The comparison against the S&P 500 therefore conflates the effect of stock selection with the effect of diversification, and it is not possible to determine from this analysis alone which factor drives the risk differential.
