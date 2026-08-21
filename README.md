@@ -141,7 +141,7 @@ The train period is partitioned into bull-market days (S&P 500 daily return grea
   Bear days (S&P 500 <= 0): 79
 ```
 
-![Realized daily return distributions by regime](assets/regime_analysis.png)
+![Realised daily return distributions by regime](assets/regime_analysis.png)
 
 ```
                               Mean/day  Std Dev  Ann. Sharpe  % Days +  Worst Day
