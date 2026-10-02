@@ -185,3 +185,12 @@ Further extensions that would improve the reliability of the results include:
 - Daily returns are modelled as multivariate normal. Equity returns exhibit fat tails and negative skewness not captured by the Gaussian assumption, so the true probability of extreme losses is likely higher than the VaR and CVaR figures suggest.
 - Performance metrics are estimated from a single one-year historical window. Results may differ substantially across different market regimes; rolling walk-forward validation would provide a more robust assessment of whether the regime-analysis findings are consistent over time.
 - The 7-stock portfolio is too concentrated to eliminate idiosyncratic risk, even with optimal weighting. The comparison against the S&P 500 therefore conflates the effect of stock selection with the effect of diversification, and it is not possible to determine from this analysis alone which factor drives the risk differential.
+
+## References
+
+- Glasserman, P. (2003). *Monte Carlo Methods in Financial Engineering*. Springer. https://doi.org/10.1007/978-0-387-21617-1
+- Lloyd, S. P. (1982). Least squares quantization in PCM. *IEEE Transactions on Information Theory*, 28(2), 129–137. https://doi.org/10.1109/TIT.1982.1056489
+- Markowitz, H. (1952). Portfolio selection. *Journal of Finance*, 7(1), 77–91. https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
+- Rockafellar, R. T., & Uryasev, S. (2000). Optimization of conditional value-at-risk. *Journal of Risk*, 2(3), 21–41. https://doi.org/10.21314/JOR.2000.038
+- Satopää, V., Albrecht, J., Irwin, D., & Raghavan, B. (2011). Finding a "Kneedle" in a haystack: Detecting knee points in system behavior. *Proceedings of the 31st International Conference on Distributed Computing Systems Workshops*, 166–171. https://doi.org/10.1109/ICDCSW.2011.20
+- Sharpe, W. F. (1994). The Sharpe ratio. *Journal of Portfolio Management*, 21(1), 49–58. https://doi.org/10.3905/jpm.1994.409501
